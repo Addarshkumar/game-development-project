@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Kenia&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#main-container{
+    background-image:  url("assets/car\ game\ instructions\ page\ background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#instructions{
+    height: 70vh;
+    width: 900px;
+
+    border: 5px solid rgb(255, 10, 10);
+    border-radius: 10px;
+    position: relative;  
+    
+}
+
+
+#button-start{
+    margin-left: 40%;
+    margin-top: 20%;
+} 
+
+#start-btn{
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(31, 198, 31);
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+#instructions::before{
+    background-color: black;
+    position: absolute;
+    content: '';
+    inset: 0;
+    opacity: 0.3;
+
+}
+
+p{
+    isolation: isolate;
+    line-height: 50px;
+    margin-left: 15px;
+    font-size: 30px;
+    color: rgb(239, 143, 8);
+    font-weight: 400;
+    font-family: 'Kenia', sans-serif;
+}
+#instruction-para{
+    font-size: 35px;
+} 
+
+@media screen and (max-width:880px){
+    p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:450px){
+    p{
+        font-size: 15px;
+    }
+    #button-start{
+        margin-top: 10%;
+        margin-left: 30%;
+    }
+}
+
