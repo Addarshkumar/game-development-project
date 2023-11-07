@@ -44,17 +44,9 @@
     color: white;
     font-weight: 600;
 }
-#instructions::before{
-    background-color: black;
-    position: absolute;
-    content: '';
-    inset: 0;
-    opacity: 0.3;
 
-}
 
 p{
-    isolation: isolate;
     line-height: 50px;
     margin-left: 15px;
     font-size: 30px;
