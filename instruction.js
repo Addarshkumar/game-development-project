@@ -1,8 +1,17 @@
 let btn=document.getElementById("start-btn");
+let goBackBtn=document.getElementById("goback");
+
+goBackBtn.onclick=()=>{
+    window.location.href="index.html"
+}
+
+let btnClickAudio=new Audio("./assets/button-124476.mp3")
 
 btn.onclick=()=>{
-    console.log("hi")
+    setTimeout(()=>{
 
-    window.location.href="./gamepage.html"
+        window.location.href="./gamepage.html"
+
+    },1000)
 }
 

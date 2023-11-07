@@ -91,5 +91,29 @@
     background-color: rgb(20, 119, 126);
     color: white;
 }
+#nav{
+    height: 50px;
+    width: 100%;
+    /* background-color: rgb(50, 48, 48); */
+    background-color: rgb(26, 25, 25);
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    color: white;
+    font-size: 20px;
 
+}
+#user{
+    height: 30px;
+    width: 250px;
+}
+#username{
+    color: white;
+    font-size: 20px;
+}
+#nosound{
+    /* position: absolute; */
+    display: none;
+}
 

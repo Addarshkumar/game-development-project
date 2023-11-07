@@ -15,7 +15,7 @@ let player = {};
 //initialising time and highscore to 0.
 
 let time = 0;
-let highscore=0;
+// let highscore=0;
 let interval;
 
 
@@ -34,16 +34,16 @@ function startFunction() {
 }
 startFunction();
 
-if(time>=10){
- enemyCar1.style.animation="movecar1 2s linear infinite"
+// if(time>=10){
+//  enemyCar1.style.animation="movecar1 2s linear infinite"
 
-  enemyCar2.style.animation="movecar2 2s linear infinite"
+//   enemyCar2.style.animation="movecar2 2s linear infinite"
  
-  enemyCar3.style.animation="movecar3 2s linear infinite"
+//   enemyCar3.style.animation="movecar3 2s linear infinite"
  
-  enemyCar4.style.animation="movecar4 2s linear infinite"
+//   enemyCar4.style.animation="movecar4 2s linear infinite"
  
-}
+// }
 
 
 //creating roadlines
@@ -151,7 +151,7 @@ function isCollison() {
 
     if (!((a.top > b.bottom) || (a.bottom < b.top) ||
       (a.right < b.left) || (a.left > b.right))) {
-      console.log("collided")
+      // console.log("collided")
       window.location.href = "./gameover.html"
 
 
@@ -162,8 +162,6 @@ function isCollison() {
 }
 isCollison()
 setInterval(isCollison, 100);
-
-
 
 
 
