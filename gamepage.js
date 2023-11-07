@@ -34,20 +34,6 @@ function startFunction() {
 }
 startFunction();
 
-// if(time>=10){
-//  enemyCar1.style.animation="movecar1 2s linear infinite"
-
-//   enemyCar2.style.animation="movecar2 2s linear infinite"
- 
-//   enemyCar3.style.animation="movecar3 2s linear infinite"
- 
-//   enemyCar4.style.animation="movecar4 2s linear infinite"
- 
-// }
-
-
-//creating roadlines
-
 for (let i = 0; i < 5; i++) {
   let roadLines = document.createElement("div");
   roadLines.setAttribute("class", "roadlines")
@@ -124,7 +110,7 @@ function startGame() {
 
 //changing positions of playercar on clicking on keys
 
-  if (keys.ArrowUp) {
+  if (keys.ArrowUp ) {
     player.y -= 5;
   }
   if (keys.ArrowDown && player.y < 600) {
@@ -160,8 +146,8 @@ function isCollison() {
   }
 
 }
-isCollison()
-setInterval(isCollison, 100);
+// isCollison()
+// setInterval(isCollison, 100);
 
 
 
@@ -179,6 +165,37 @@ function carHornPlay() {
 }
 setInterval(carHornPlay, 7000)
 
+let leftArrow=document.getElementById("leftarrow")
+let rightArrow=document.getElementById("rightarrow")
+let topArrow=document.getElementById("toparrow");
+let downArrow=document.getElementById("downarrow")
+
+leftArrow.onmousedown = () => {
+  if (player.x > 0) {
+    player.x -= 15;
+    playerCar.style.left = player.x + "px";
+  }
+};
+
+rightArrow.onmousedown = () => {
+  if (player.x + playerCar.offsetWidth > 0) {
+    player.x += 15;
+    playerCar.style.left = player.x + "px";
+  }
+};
+
+
+downArrow.onmousedown = () => {
+  if (player.x + playerCar.offsetHeight < 600) {
+    player.y += 15;
+    playerCar.style.top = player.y + "px";
+  }
+};
+topArrow.onmousedown = () => {
+  
+    player.y -= 15;
+    playerCar.style.top = player.y + "px";
+  }
 
 
 

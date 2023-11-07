@@ -56,6 +56,37 @@ img{
 
 }
 
+
+.arrow{
+    width: 70px;
+    height: 70px;
+
+
+
+}
+#leftarrow{
+    position: absolute;
+    right: 170%;
+    top: 70%;
+}
+#rightarrow{
+    position: absolute;
+    right: 145%;
+    top: 70%;
+}
+#toparrow{
+    position: absolute;
+    right: 157%;
+    top: 60%;
+}
+#downarrow{
+    position: absolute;
+    right: 157%;
+    top: 80%;
+}
+
+
+
 /* animation to move first enemy car */
 
 @keyframes movecar1{
@@ -191,7 +222,7 @@ img{
 
 @media screen and (max-width:600px){
     #road{
-        width: 60%;
+        width: 50%;
         
     }
     #score{
@@ -207,6 +238,34 @@ img{
     }
     img{
         width: 100%;
+    }
+
+    #leftarrow{
+        position: absolute;
+        right: 130%;
+        top: 70%;
+        width: 50px;
+    }
+    #rightarrow{
+        position: absolute;
+        right: 110%;
+        top: 70%;
+        width: 50px;
+
+    }
+    #toparrow{
+        position: absolute;
+        right: 120%;
+        top: 60%;
+        width: 50px;
+
+    }
+    #downarrow{
+        position: absolute;
+        right: 120%;
+        top: 80%;
+        width: 50px;
+
     }
    
 }
