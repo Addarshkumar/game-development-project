@@ -3,7 +3,7 @@
     margin: 0px;
 }
 #gameover-image{
-    background-image: url("assets/game\ over\ car\ game\ background.jpg");
+    background-image: url("https://e0.pxfuel.com/wallpapers/587/12/desktop-wallpaper-car-crash-data-src-car-crash-car-crash-accident.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -12,7 +12,6 @@
     height: 100vh;
 }
 .gameover{
-    isolation: isolate;
     width: 100%;
     color: white;
     height: 100px;
@@ -31,14 +30,7 @@
 
     
 }
-#score::before{
-    background-color: rgb(7, 7, 7);
-    content: '';
-    inset: 0;
-    opacity: 0.5;
-    position: absolute;
 
-}
 
 #playagain{
     height: 100vh;
@@ -58,22 +50,32 @@
     height: 40px;
     font-size: 20px;
     background-color: rgb(92, 164, 173);
-        border-radius: 20px;
+    border-radius: 20px;
 
 }
 
 
 
 @media screen and (max-width:950px){
-      h1{font-size: 20px;
-      }
      
+     .gameover{
+        font-size: 25px;
+        height: 30px;
+     }
+     #playerscorevalue{
+        font-size: 25px;
+     }
+     #playerscore{
+        font-size: 25px;
+     }
+     #highscore{
+        font-size: 25px;
+     }
       
 }
 
 @media screen and (max-width:400px){
-    h1{font-size: 20px;
-    }
+    
     #score{
         width: 100%;
     }
