@@ -1,83 +1,186 @@
-let playerCar=document.getElementById("playercar");
-let enemyCar1=document.getElementById("enemycar1");
-let enemyCar2=document.getElementById("enemycar2");
-let enemyCar3=document.getElementById("enemycar3");
+//selecting html ID's and class in Javascript
+let playerCar = document.getElementById("playercar");
+let enemyCar1 = document.getElementById("enemycar1");
+let enemyCar2 = document.getElementById("enemycar2");
+let enemyCar3 = document.getElementById("enemycar3");
+let enemyCar4 = document.getElementById("enemycar4");
+let enemyCar  = document.querySelectorAll(".enemycar");
+let scoreValue = document.getElementById("scorevalue");
 
-let player={};
 
-for(let i=0;i<5;i++){
-    let roadLines=document.createElement("div");
-    roadLines.setAttribute("class","roadlines")
-    roadLines.y=(i*150)
-    roadLines.style.top=roadLines.y+"px"
-    road.appendChild(roadLines);
+
+
+let player = {};
+
+//initialising time and highscore to 0.
+
+let time = 0;
+let highscore=0;
+let interval;
+
+
+//setting time interval to store score
+
+function startFunction() {
+  time = 0;
+  interval = setInterval(() => {
+    time++
+    scoreValue.innerText = time;
+    // console.log(time);
+    localStorage.setItem("score",time);
+    
+
+  }, 500)
+}
+startFunction();
+
+if(time>=10){
+ enemyCar1.style.animation="movecar1 2s linear infinite"
+
+  enemyCar2.style.animation="movecar2 2s linear infinite"
+ 
+  enemyCar3.style.animation="movecar3 2s linear infinite"
+ 
+  enemyCar4.style.animation="movecar4 2s linear infinite"
+ 
+}
+
+
+//creating roadlines
+
+for (let i = 0; i < 5; i++) {
+  let roadLines = document.createElement("div");
+  roadLines.setAttribute("class", "roadlines")
+  roadLines.y = (i * 150)
+  roadLines.style.top = roadLines.y + "px"
+  road.appendChild(roadLines);
+}
+
+//giving animations to roadlines
+
+function animatedLines() {
+  window.requestAnimationFrame(animatedLines);
+  let lines = document.querySelectorAll(".roadlines");
+  lines.forEach(function (item) {
+    item.y += 5;
+    item.style.top = item.y + "px"
+    if (item.y > 600) {
+      item.y -= 750
     }
 
-function animatedLines(){
-   window.requestAnimationFrame(animatedLines);
-   let lines=document.querySelectorAll(".roadlines");
-   lines.forEach(function(item){
-      item.y+=5;
-      item.style.top=item.y+"px"
-      if(item.y>590){
-         item.y-=750
-      }
- 
-   })
+  })
 }
 animatedLines()
 
-let keys={
-    ArrowUp:false,
-    ArrowDown:false,
-    ArrowLeft:false,
-    ArrowRight:false
+//giving random positions to enemy cars
+
+for(let i=0;i<enemyCar.length;i++){
+  enemyCar[i].addEventListener("animationiteration",function(){
+    let random = Math.floor(Math.random() * 320)
+    enemyCar[i].style.left = random + "px"
+
+  })
+}
+
+
+
+
+
+//object to store Arrowkeys which I have to use
+let keys = {
+  ArrowUp: false,
+  ArrowDown: false,
+  ArrowLeft: false,
+  ArrowRight: false
+}
+
+document.addEventListener("keydown", keyDownFunction);
+document.addEventListener("keyup", keyUpFunction);
+
+function keyDownFunction(e) {
+  keys[e.key] = true;
+  //  console.log(keys)
+}
+
+function keyUpFunction(e) {
+  keys[e.key] = false;
+  // console.log(keys)
+
+}
+
+//setting offset property to get car position from top and left
+
+player.y = playerCar.offsetTop;
+player.x = playerCar.offsetLeft;
+console.log(player.x)
+console.log(player.y)
+
+
+function startGame() {
+
+// repeat startGame function infinitely
+
+  window.requestAnimationFrame(startGame);
+
+//changing positions of playercar on clicking on keys
+
+  if (keys.ArrowUp) {
+    player.y -= 5;
   }
-  
-  document.addEventListener("keydown",keyDownFunction);
-  document.addEventListener("keyup",keyUpFunction);
-  
-  function keyDownFunction(e){
-     keys[e.key]=true;
-    //  console.log(keys)
+  if (keys.ArrowDown && player.y < 600) {
+    player.y += 5;
   }
-  
-  function keyUpFunction(e){
-    keys[e.key]=false;
-    // console.log(keys)
-  
+  if (keys.ArrowLeft && player.x > 0) {
+    player.x -= 5;
   }
-  
-  player.y=playerCar.offsetTop;
-  player.x=playerCar.offsetLeft;
-  console.log(player.x)
-  console.log(player.y)
-  
-  
-  function startGame(){
-    window.requestAnimationFrame(startGame);
-  
-    if(keys.ArrowUp){
-      player.y-=5;
-    }
-    if(keys.ArrowDown){
-      player.y+=5;
-    }
-    if(keys.ArrowLeft){
-      player.x-=5;
-    }
-    if(keys.ArrowRight){
-      player.x+=5;
-    }
-  
-    playerCar.style.top=player.y+"px";
-    playerCar.style.left=player.x+"px";
-  
+  if (keys.ArrowRight && player.x < 320) {
+    player.x += 5;
   }
-  
-  
-  
-  
-  
-  startGame();
-  
+
+  playerCar.style.top = player.y + "px";
+  playerCar.style.left = player.x + "px";
+
+}
+
+//checking for collison
+
+function isCollison() {
+  for (let i = 0; i < enemyCar.length; i++) {
+    let a = playerCar.getBoundingClientRect();
+    let b = enemyCar[i].getBoundingClientRect();
+
+    if (!((a.top > b.bottom) || (a.bottom < b.top) ||
+      (a.right < b.left) || (a.left > b.right))) {
+      console.log("collided")
+      window.location.href = "./gameover.html"
+
+
+    }
+
+  }
+
+}
+// isCollison()
+// setInterval(isCollison, 100);
+
+
+
+
+
+//gameaudio
+
+startGame();
+let carAudio = new Audio("./assets/car-acceleration-inside-car-7087.mp3");
+carAudio.play()
+carAudio.loop = true;
+
+function carHornPlay() {
+  let carHorn = new Audio("./assets/car-horn-6408.mp3");
+  carHorn.play();
+
+}
+setInterval(carHornPlay, 7000)
+
+
+
+
