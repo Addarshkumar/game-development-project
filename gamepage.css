@@ -220,9 +220,10 @@ img{
 }
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:700px){
     #road{
         width: 50%;
+        height: 308px;
         
     }
     #score{
@@ -242,28 +243,28 @@ img{
 
     #leftarrow{
         position: absolute;
-        right: 130%;
-        top: 70%;
+        right: 132%;
+        top: 50%;
         width: 50px;
     }
     #rightarrow{
         position: absolute;
-        right: 110%;
-        top: 70%;
+        right: 108%;
+        top: 50%;
         width: 50px;
 
     }
     #toparrow{
         position: absolute;
         right: 120%;
-        top: 60%;
+        top: 38%;
         width: 50px;
 
     }
     #downarrow{
         position: absolute;
         right: 120%;
-        top: 80%;
+        top: 62%;
         width: 50px;
 
     }

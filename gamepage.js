@@ -178,7 +178,7 @@ leftArrow.onmousedown = () => {
 };
 
 rightArrow.onmousedown = () => {
-  if (player.x + playerCar.offsetWidth > 0) {
+  if (player.x + playerCar.offsetWidth<300) {
     player.x += 15;
     playerCar.style.left = player.x + "px";
   }
