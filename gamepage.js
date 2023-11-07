@@ -160,8 +160,8 @@ function isCollison() {
   }
 
 }
-// isCollison()
-// setInterval(isCollison, 100);
+isCollison()
+setInterval(isCollison, 100);
 
 
 
