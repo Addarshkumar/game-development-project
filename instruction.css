@@ -25,6 +25,7 @@
     border: 5px solid rgb(255, 10, 10);
     border-radius: 10px;
     position: relative;  
+    pointer-events: all;
     
 }
 
