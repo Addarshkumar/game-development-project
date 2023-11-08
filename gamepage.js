@@ -30,9 +30,23 @@ function startFunction() {
     localStorage.setItem("score",time);
     
 
+    if(time>100){
+      enemyCar1.style.animationDuration="2s"
+      enemyCar2.style.animationDuration="2.5s"
+      enemyCar3.style.animationDuration="3s"
+      enemyCar4.style.animationDuration="3.5s"
+    }
+    if(time>200){
+      enemyCar1.style.animationDuration="1s"
+      enemyCar2.style.animationDuration="1.5s"
+      enemyCar3.style.animationDuration="2s"
+      enemyCar4.style.animationDuration="2.5s"
+    }
   }, 500)
 }
 startFunction();
+
+//creating roadlines after a specific position
 
 for (let i = 0; i < 5; i++) {
   let roadLines = document.createElement("div");
@@ -58,7 +72,7 @@ function animatedLines() {
 }
 animatedLines()
 
-//giving random positions to enemy cars
+//giving random positions to enemy cars depending on the width of screen
 
 for (let i = 0; i < enemyCar.length; i++) {
   enemyCar[i].addEventListener("animationiteration", function () {
@@ -169,13 +183,21 @@ function carHornPlay() {
 }
 setInterval(carHornPlay, 7000)
 
+//javascript for mobile version
+
+//selecting arrowbutton images
+
 let leftArrow=document.getElementById("leftarrow")
 let rightArrow=document.getElementById("rightarrow")
 let topArrow=document.getElementById("toparrow");
 let downArrow=document.getElementById("downarrow")
 
-let roadWidth = 180; // Road width
-let roadHeight = window.innerHeight; // Road height is set to the height of the viewport (100vh)
+
+
+let roadWidth = 180; 
+let roadHeight = window.innerHeight; 
+
+//moving car using arrowbutton images on mobile
 
 leftArrow.onmousedown = () => {
   if (player.x > 0) {

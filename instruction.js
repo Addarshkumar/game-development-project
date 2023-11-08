@@ -1,13 +1,18 @@
 let btn=document.getElementById("start-btn");
 let goBackBtn=document.getElementById("goback");
 
+//arrow button to go to index.html
+
 goBackBtn.onclick=()=>{
     window.location.href="index.html"
 }
 
-let btnClickAudio=new Audio("./assets/button-124476.mp3")
+
 
 btn.onclick=()=>{
+
+//redirect to gamepage.html after 1s 
+
     setTimeout(()=>{
 
         window.location.href="./gamepage.html"

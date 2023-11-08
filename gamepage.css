@@ -44,25 +44,14 @@ img{
     height: 100%;
 }
 
-#enemycar1{
-    width:13%;
-    height: 70px;
-    position: absolute;
-    left: 10%;
-    top: 0px;
-    z-index: 1;
-    border-radius: 10px;
-    animation: movecar1 4s linear infinite;
-
-}
 
 
 .arrow{
     width: 70px;
     height: 70px;
-
-
-
+    
+    
+    
 }
 #leftarrow{
     position: absolute;
@@ -85,6 +74,17 @@ img{
     top: 80%;
 }
 
+#enemycar1{
+    width:13%;
+    height: 70px;
+    position: absolute;
+    left: 10%;
+    top: 0px;
+    z-index: 1;
+    border-radius: 10px;
+    animation: movecar1 4.5s linear infinite;
+
+}
 
 
 /* animation to move first enemy car */
@@ -106,7 +106,7 @@ img{
     top: 0px;
     z-index: 1;
     border-radius: 10px;
-    animation: movecar2 3s linear infinite;
+    animation: movecar2 4s linear infinite;
 }
 
 /* animation to move second enemy car */
@@ -202,7 +202,7 @@ img{
       position: relative;
       right: 50%;
     }
-   
+
 }
 
 
@@ -275,6 +275,11 @@ img{
 @media screen and (max-width:400px){
     #road{
         width: 50%;
+        
+    }
+    #playercar{
+        position: relative;
+        top: 30%;
         
     }
   

@@ -54,6 +54,7 @@
     height: 40px;
     margin-left: 40px;
     font-size: 15px;
+    border-radius: 10px;
 }
 
 #email-input{
@@ -62,6 +63,8 @@
     height: 40px;
     margin-left: 40px;
     font-size: 15px;
+    border-radius: 10px;
+
 
 }
 #password-input{
@@ -70,26 +73,36 @@
     height: 40px;
     margin-left: 40px;
     font-size: 15px;
+    border-radius: 10px;
+
 
 
 }
 #submit{
-    margin-left: 120px;
-    width: 70px;
+    margin-left: 100px;
+    width: 90px;
     height: 35px;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 10px;
     background-color: rgb(239, 194, 12);
 }
+#submit:hover{
+  background-color: rgb(197, 180, 49);
+}
+    
+
 
 #guest-play{
-    margin-left: 105px;
+    margin-left: 95px;
     width: 100px;
     height: 35px;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 10px;
-    background-color: rgb(20, 119, 126);
+    background-color: rgb(44, 148, 155);
     color: white;
+}
+#guest-play:hover{
+    background-color: rgb(20, 76, 99);
 }
 #nav{
     height: 50px;
