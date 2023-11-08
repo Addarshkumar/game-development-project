@@ -213,12 +213,9 @@ img{
 @media screen and (max-width:800px){
     #road{
         width: 50%;
-        height: 308px;
         
     }
-    #game-container{
-        height: 308px;
-    }
+  
     #score{
       position: relative;
       right: 35%;
@@ -275,8 +272,73 @@ img{
     }
    
 }
+@media screen and (max-width:400px){
+    #road{
+        width: 50%;
+        
+    }
+  
+    #score{
+      position: relative;
+      right: 35%;
+    }
+    #enemycar1{
+        width:30px;
+    }
 
-@media screen and (max-width:330px){
+    #enemycar2{
+        width:30px;
+    }
+
+    #enemycar3{
+        width:30px;
+    }
+
+    #enemycar4{
+        width:30px;
+    }
+
+    #playercar{
+        width: 30px;
+    }
+    img{
+        width: 100%;
+    }
+
+    #rightarrow{
+        position: absolute;
+        left: 100%;
+        top: 35%;
+        width: 50px;
+    }
+    #leftarrow{
+        position: absolute;
+        left: -40%;
+        top: 35%;
+        width: 50px;
+
+    }
+    #toparrow{
+        position: absolute;
+        left: -35%;
+
+        top: 20%;
+        width: 50px;
+
+    }
+    #downarrow{
+        position: absolute;
+        left: 100%;
+        top: 20%;
+        width: 50px;
+
+    }
+   
+}
+
+
+
+@media screen and (max-width:300px){
     #road{
         width: 100%;
         height: 100vh;

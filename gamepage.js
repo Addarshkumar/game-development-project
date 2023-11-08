@@ -60,12 +60,16 @@ animatedLines()
 
 //giving random positions to enemy cars
 
-for(let i=0;i<enemyCar.length;i++){
-  enemyCar[i].addEventListener("animationiteration",function(){
-    let random = Math.floor(Math.random() * 320)
-    enemyCar[i].style.left = random + "px"
-
-  })
+for (let i = 0; i < enemyCar.length; i++) {
+  enemyCar[i].addEventListener("animationiteration", function () {
+    let random;
+    if (window.innerWidth < 400) {
+      random = Math.floor(Math.random() * 80);
+    } else {
+      random = Math.floor(Math.random() * 320);
+    }
+    enemyCar[i].style.left = random + "px";
+  });
 }
 
 
@@ -170,6 +174,9 @@ let rightArrow=document.getElementById("rightarrow")
 let topArrow=document.getElementById("toparrow");
 let downArrow=document.getElementById("downarrow")
 
+let roadWidth = 180; // Road width
+let roadHeight = window.innerHeight; // Road height is set to the height of the viewport (100vh)
+
 leftArrow.onmousedown = () => {
   if (player.x > 0) {
     player.x -= 15;
@@ -178,24 +185,25 @@ leftArrow.onmousedown = () => {
 };
 
 rightArrow.onmousedown = () => {
-  if (player.x + playerCar.offsetWidth<300) {
+  if (player.x + playerCar.offsetWidth < roadWidth) {
     player.x += 15;
     playerCar.style.left = player.x + "px";
   }
 };
 
+topArrow.onmousedown = () => {
+  if (player.y > 0) {
+    player.y -= 15;
+    playerCar.style.top = player.y + "px";
+  }
+};
 
 downArrow.onmousedown = () => {
-  if (player.x + playerCar.offsetHeight < 600) {
+  if (player.y + playerCar.offsetHeight < 600) {
     player.y += 15;
     playerCar.style.top = player.y + "px";
   }
 };
-topArrow.onmousedown = () => {
-  
-    player.y -= 15;
-    playerCar.style.top = player.y + "px";
-  }
 
 
 
